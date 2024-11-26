@@ -1,6 +1,6 @@
 <?php
-$host = 'localhost';
-$user = 'root';
+$host = 'cuiavagas.mysql.uhserver.com';
+$user = 'cuiavagas';
 $password = '';
 $database = 'cuiavagas';
 
