@@ -41,6 +41,7 @@ if (isset($_SESSION["user_id"]) && $_SESSION['type'] == "admin") {
                 "neighborhood" => htmlspecialchars($post["neighborhood"] ?? ''),
                 "postal_code" => htmlspecialchars($post["postal_code"] ?? ''),
                 "birth_date" => htmlspecialchars($post["birth_date"] ?? ''),
+                "gender" => htmlspecialchars($post["gender"] ?? ''),
                 "password" => $password,
                 "type" => 'student'
             ];

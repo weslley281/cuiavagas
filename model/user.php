@@ -17,12 +17,12 @@ class User
     {
         try {
             $stmt = $this->conn->prepare(
-                'INSERT INTO users (name, phone, email, address, complement, country, state, city, neighborhood, postal_code, birth_date, password, type)
-                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+                'INSERT INTO users (name, phone, email, address, complement, country, state, city, neighborhood, postal_code, birth_date, gender, password, type)
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
             );
 
             $stmt->bind_param(
-                'ssssssssssssssss',
+                'sssssssssssssssss',
                 $data['name'],
                 $data['phone'],
                 $data['email'],
@@ -34,6 +34,7 @@ class User
                 $data['neighborhood'],
                 $data['postal_code'],
                 $data['birth_date'],
+                $data['gender'],
                 $data['password'],
                 $data['type']
             );
@@ -91,11 +92,11 @@ class User
     {
         try {
             $stmt = $this->conn->prepare(
-                'UPDATE users SET name = ?, phone = ?, email = ?, address = ?, complement = ?, country = ?, state = ?, city = ?, neighborhood = ?, postal_code = ?, birth_date = ?, password = ?, type = ? WHERE id = ?'
+                'UPDATE users SET name = ?, phone = ?, email = ?, address = ?, complement = ?, country = ?, state = ?, city = ?, neighborhood = ?, postal_code = ?, birth_date = ?, gender = ?, password = ?, type = ? WHERE id = ?'
             );
 
             $stmt->bind_param(
-                'ssssssssssssssssi',
+                'sssssssssssssssssi',
                 $data['name'],
                 $data['phone'],
                 $data['email'],
@@ -107,6 +108,7 @@ class User
                 $data['neighborhood'],
                 $data['postal_code'],
                 $data['birth_date'],
+                $data['gender'],
                 $data['password'],
                 $data['type'],
                 $id
