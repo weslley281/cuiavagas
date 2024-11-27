@@ -1,7 +1,7 @@
 <?php
 $host = 'cuiavagas.mysql.uhserver.com';
 $user = 'cuiavagas';
-$password = '';
+$password = 'Cui@vagas12';
 $database = 'cuiavagas';
 
 $conn = new mysqli($host, $user, $password, $database);
