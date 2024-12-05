@@ -19,6 +19,10 @@ switch ($page) {
     case 'home':
         require_once "views/index.php";
         break;
+
+    case 'login':
+        require_once "views/login.php";
+        break;
         
     default:
         # code...
