@@ -1,7 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION["user_id"]) && $_SESSION['type'] == "admin") {
-    require_once __DIR__ . '/../models/User.php';
+    require_once __DIR__ . '/../model/User.php';
     require_once __DIR__ . '/../config/db.php';
     require_once __DIR__ . '/../utils/generateRandomPassword.php';
     require_once __DIR__ . '/../utils/openssl.php';
@@ -56,54 +55,54 @@ if (isset($_SESSION["user_id"]) && $_SESSION['type'] == "admin") {
                     $data = getUserData($_POST);
 
                     if ($user->create($data)) {
-                        header("Location: ../views/index.php");
+                        header("Location: ../index.php?page=login");
                     } else {
                         echo $user->create($data);
-                        header("Location: ../views/index.php");
+                        header("Location: ../index.php?page=login");
                     }
                 } else {
                     echo "<center><strong><h1>As duas senhas diferem uma da outra</h1></strong></center>";
                     echo "<script>";
-                    echo "setTimeout(function() { window.location.href = '../views/index.php'; }, 3000);";
+                    echo "setTimeout(function() { window.location.href = '../index.php?page=login'; }, 3000);";
                     echo "</script>";
                 }
                 break;
 
             case 'update': // Atualiza um usuário existente
                 if ($id === null) {
-                    header("Location: ../views/index.php");
+                    header("Location: ../index.php?page=login");
                     exit;
                 }
                 $data = getUserData($_POST);
                 if ($user->update($data, $id)) {
-                    header("Location: ../views/index.php");
+                    header("Location: ../index.php?page=login");
                 } else {
-                    header("Location: ../views/index.php");
+                    header("Location: ../index.php?page=login");
                 }
                 break;
 
             case 'updatetype':
                 if ($id === null) {
-                    header("Location: ../views/index.php");
+                    header("Location: ../index.php?page=login");
                     exit;
                 }
 
                 if ($user->updateType($_POST["type"], $id)) {
-                    header("Location: ../views/index.php");
+                    header("Location: ../index.php?page=login");
                 } else {
-                    header("Location: ../views/index.php");
+                    header("Location: ../index.php?page=login");
                 }
                 break;
 
             case 'delete': // Deleta um usuário pelo ID
                 if ($id === null) {
-                    header("Location: ../views/index.php");
+                    header("Location: ../index.php?page=login");
                     exit;
                 }
                 if ($user->delete($id)) {
-                    header("Location: ../views/index.php");
+                    header("Location: ../index.php?page=login");
                 } else {
-                    header("Location: ../views/index.php");
+                    header("Location: ../index.php?page=login");
                 }
                 break;
 
@@ -114,9 +113,3 @@ if (isset($_SESSION["user_id"]) && $_SESSION['type'] == "admin") {
                 break;
         }
     }
-} else {
-    echo "<center><strong><h1>Você não Tem permição para isso</h1></strong></center>";
-    echo "<script>";
-    echo "setTimeout(function() { window.location.href = '../index.php?page=login'; }, 3000);";
-    echo "</script>";
-}

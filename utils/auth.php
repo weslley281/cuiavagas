@@ -32,15 +32,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['type'] = $user['type'];
             $_SESSION['name'] = $user['name'];
 
-            header("Location:  ../views/index.php");
+            header("Location:  ../index.php");
 
             exit;
         } else {
             echo "PAREI AQUI 01";
-            header("Location: ../views/index.php");
+            header("Location: ../index.php?page=login");
         }
     } else {
         echo "PAREI AQUI 02";
-        header("Location: ../views/index.php");
+        header("Location: ../index.php?page=login");
     }
 }

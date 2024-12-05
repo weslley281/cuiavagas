@@ -65,14 +65,14 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <h1 class="text-center">Login</h1>
-                    <form action="login.php" method="POST" class="mt-4">
+                    <form action="utils/auth.php" method="POST" class="mt-4">
                         <div class="mb-3">
                             <label for="email" class="form-label">E-mail</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required>
+                            <input type="email" class="form-control" id="email" name="email" value="gostoso@gmail.com" required>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" required>
+                            <input type="password" class="form-control" id="password" name="password" value="Admin@123" required>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
@@ -102,31 +102,27 @@
                 </div>
                 <div class="modal-body">
                 <h1 class="text-center">Cadastro de Usuário</h1>
-                <form action="?action=create" method="POST" class="mt-4">
+                <form action="controllers/userController.php?action=create" method="POST" class="mt-4">
                     <div class="container">
                         <div class="form-group">
                             <label for="name" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <input type="text" class="form-control" id="name" name="name" value="Vampeta" required>
                         </div>
                         <div class="form-group">
                             <label for="phone" class="form-label">Telefone</label>
-                            <input type="text" class="form-control" id="phone" name="phone" required>
+                            <input type="text" class="form-control" id="phone" name="phone" value="65912345678" required>
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-label">E-mail</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="cpf" class="form-label">CPF</label>
-                            <input type="text" class="form-control" id="cpf" name="cpf" required>
+                            <input type="email" class="form-control" id="email" name="email" value="gostoso@gmail.com" required>
                         </div>
                         <div class="form-group">
                             <label for="address" class="form-label">Endereço</label>
-                            <input type="text" class="form-control" id="address" name="address">
+                            <input type="text" class="form-control" id="address" value="Rua sei la" name="address">
                         </div>
                         <div class="form-group">
                             <label for="complement" class="form-label">Complemento</label>
-                            <input type="text" class="form-control" id="complement" name="complement">
+                            <input type="text" class="form-control" id="complement" value="nao sei" name="complement">
                         </div>
                         <div class="form-group">
                             <label for="country" class="form-label">País</label>
@@ -134,7 +130,7 @@
                         </div>
                         <div class="form-group">
                             <label for="state" class="form-label">Estado</label>
-                            <select class="form-select" id="state" name="state" required>
+                            <select class="form-select form-control" id="state" name="state" required>
                                 <option value="" selected disabled>Selecione</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
@@ -165,25 +161,25 @@
                                 <option value="TO">Tocantins</option>
                             </select>
                         </div>
-                        <div class="col-md-4">
+                        <div class="form-group">
                             <label for="city" class="form-label">Cidade</label>
-                            <input type="text" class="form-control" id="city" name="city" required>
+                            <input type="text" class="form-control" id="city" name="city" value="Vagina Grande" required>
                         </div>
                         <div class="form-group">
                             <label for="neighborhood" class="form-label">Bairro</label>
-                            <input type="text" class="form-control" id="neighborhood" name="neighborhood">
+                            <input type="text" class="form-control" id="neighborhood" value="Novo Mundo" name="neighborhood">
                         </div>
                         <div class="form-group">
                             <label for="postal_code" class="form-label">CEP</label>
-                            <input type="text" class="form-control" id="postal_code" name="postal_code">
+                            <input type="text" class="form-control" id="postal_code" value="78000-000" name="postal_code">
                         </div>
                         <div class="form-group">
                             <label for="birth_date" class="form-label">Data de Nascimento</label>
-                            <input type="date" class="form-control" id="birth_date" name="birth_date" required>
+                            <input type="date" class="form-control" id="birth_date" value="12/12/2024" name="birth_date" required>
                         </div>
                         <div class="form-group">
                             <label for="gender" class="form-label">Gênero</label>
-                            <select class="form-select" id="gender" name="gender" required>
+                            <select class="form-select form-control" id="gender" name="gender" required>
                                 <option value="" selected disabled>Selecione</option>
                                 <option value="male">Masculino</option>
                                 <option value="female">Feminino</option>
@@ -192,22 +188,18 @@
                         </div>
                         <div class="form-group">
                             <label for="password" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                            <input type="password" class="form-control" id="password" name="password" value="Admin@123" required>
                         </div>
                         <div class="form-group">
                             <label for="password2" class="form-label">Confirme a Senha</label>
-                            <input type="password" class="form-control" id="password2" name="password2" required>
+                            <input type="password" class="form-control" id="password2" value="Admin@123" name="password2" required>
                         </div>
                     </div>
                     <div class="text-center mt-4">
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
-                        <a href="../views/index.php" class="btn btn-secondary">Cancelar</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
                 </div>
             </div>

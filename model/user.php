@@ -22,7 +22,7 @@ class User
             );
 
             $stmt->bind_param(
-                'sssssssssssssssss',
+                'ssssssssssssss',
                 $data['name'],
                 $data['phone'],
                 $data['email'],
