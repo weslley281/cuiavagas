@@ -42,7 +42,7 @@ session_start();
                 "birth_date" => htmlspecialchars($post["birth_date"] ?? ''),
                 "gender" => htmlspecialchars($post["gender"] ?? ''),
                 "password" => $password,
-                "type" => 'student'
+                "type" => 'client'
             ];
         }
 
@@ -55,15 +55,16 @@ session_start();
                     $data = getUserData($_POST);
 
                     if ($user->create($data)) {
-                        header("Location: ../index.php?page=login");
+                        header("Location: ../index.php?page=login&action=success");
                     } else {
                         echo $user->create($data);
-                        header("Location: ../index.php?page=login");
+                        var_dump($data);
+                        //header("Location: ../index.php?page=login&action=fail");
                     }
                 } else {
                     echo "<center><strong><h1>As duas senhas diferem uma da outra</h1></strong></center>";
                     echo "<script>";
-                    echo "setTimeout(function() { window.location.href = '../index.php?page=login'; }, 3000);";
+                    echo "setTimeout(function() { window.location.href = '../index.php?page=login&action=wrong'; }, 3000);";
                     echo "</script>";
                 }
                 break;

@@ -181,8 +181,8 @@
                             <label for="gender" class="form-label">Gênero</label>
                             <select class="form-select form-control" id="gender" name="gender" required>
                                 <option value="" selected disabled>Selecione</option>
-                                <option value="male">Masculino</option>
-                                <option value="female">Feminino</option>
+                                <option value="masculine">Masculino</option>
+                                <option value="feminine">Feminino</option>
                                 <option value="other">Outro</option>
                             </select>
                         </div>

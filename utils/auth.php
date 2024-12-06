@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $timeLeft = $_SESSION['block'] - time();
         $message = "Usuário bloqueado, tente novamente em " . gmdate("H:i:s", $timeLeft);
         echo "<script language='javascript'>window.alert('$message'); </script>";
-        echo "<script language='javascript'>window.location='../views/login.php'; </script>";
+        //echo "<script language='javascript'>window.location='../views/login.php'; </script>";
         exit();
     }
 
@@ -37,10 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         } else {
             echo "PAREI AQUI 01";
-            header("Location: ../index.php?page=login");
+            //header("Location: ../index.php?page=login");
         }
     } else {
         echo "PAREI AQUI 02";
-        header("Location: ../index.php?page=login");
+        //header("Location: ../index.php?page=login");
     }
 }

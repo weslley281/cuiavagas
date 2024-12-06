@@ -42,9 +42,19 @@
                             <li class="nav-item fs-4">
                                 <a class="nav-link" href="#">Contato</a>
                             </li>
-                            <li class="nav-item fs-4">
+                            <?php
+                                if (isset($_SESSION["user_id"])) {
+                                ?>
+                                <?php
+                                }else {
+                                ?>
+                                <li class="nav-item fs-4">
                                 <a class="nav-link" href="index.php?page=login">Login</a>
+                                <?php
+                                }
+                                ?>
                             </li>
+                            
                         </ul>
                     </div>
 
