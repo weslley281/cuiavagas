@@ -23,6 +23,10 @@ switch ($page) {
     case 'login':
         require_once "views/login.php";
         break;
+
+    case 'profile':
+        require_once "views/profile.php";
+        break;
         
     default:
         # code...
